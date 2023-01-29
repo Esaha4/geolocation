@@ -18,12 +18,12 @@ pipeline {
                 script{                
                     def mavenPom = readMavenPom file: 'pom.xml'
                     nexusArtifactUploader artifacts: 
-                    [[artifactId: "${mavenPom.artifactid}", 
+                    [[artifactId: "${mavenPom.artifactId}", 
                     classifier: '', 
-                    file: "target/${mavenPom.artifactid}-${mavenPom.version}.${mavenPom.packaging}", 
+                    file: "target/${mavenPom.artifactId}-${mavenPom.version}.${mavenPom.packaging}", 
                     type: "${mavenPom.packaging}"]], 
                     credentialsId: 'NexusID', 
-                    groupId: "${mavenPom.groupid}", 
+                    groupId: "${mavenPom.groupId}", 
                         nexusUrl: '192.168.56.12:8081', 
                             nexusVersion: 'nexus3', 
                                 protocol: 'http', 
