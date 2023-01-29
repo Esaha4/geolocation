@@ -1,6 +1,6 @@
 pipeline {
 
-    agent Built-In Node
+    agent any
     tools {
         maven 'M2_HOME'
     }
